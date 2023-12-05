@@ -13,13 +13,8 @@ APPROVED_BREEDS = [
 
 class Dog:
     def __init__(self, name = "Fido", breed = "Mastiff"):
-        if isinstance(name, str) and 1 <= len(name) <= 25 and breed in APPROVED_BREEDS:
-            self._name = name
-            self._breed = breed
-        elif name == "" or isinstance(name, str) == False or len(name) < 1 or len(name) >25: 
-            print("Name must be string between 1 and 25 characters.")   
-        else:
-            print("Breed must be in list of approved breeds.")   
+        self.name = name
+        self.breed = breed
 
     def get_name(self):
         return self._name
@@ -42,10 +37,12 @@ class Dog:
             print("Breed must be in list of approved breeds.")
 
     breed = property(get_breed, set_breed)                       
-            
 
-dog = Dog("puppy")  
-dog2 = Dog("")
-dog3 = Dog("tdwhlfhlewruugrghltiho5yjklrnvk4tbojthkmnblkpgkgm") 
+
+#Case example        
+fido = Dog("Jake")
+print(fido.name)
+       
+
 
 
